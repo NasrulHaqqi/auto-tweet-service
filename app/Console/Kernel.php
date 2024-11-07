@@ -11,9 +11,9 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      */
-    protected function schedule(Schedule $schedule)
+    protected function schedule(Schedule $schedule): void
     {
-        $schedule->job(new WeeklyTweetJob)->everyMinute();
+        $schedule->job(new WeeklyTweetJob)->weeklyOn(1, '8:00');
     }
 
     /**
